@@ -13,40 +13,34 @@ Se XP for maior ou igual a 10.001 = Radiante
 
 Ao final deve se exibir uma mensagem:
 "O Herói de nome **{nome}** está no nível de **{nivel}**" */
-let nome="livia";
-let exp=1;
-switch (exp){
-    case (exp<=1000) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de ferro");
-        break;
-    case (exp>=1000 && exp<=2001) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Bronze");
-        break;
-        case (exp>=2000 && exp<=3001) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Prata");
-        break;    
-        case (exp=>3000 && exp<=4001) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Ouro");
-        break;
-        case (exp>=4000 &&  exp<=5001) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Platina");
-        break;
-        case (exp=>5000 && exp<=6001) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Ascendente");
-        break;
-        case (exp>=6000 && exp<=7001) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Imortal");
-        break;
-        case (exp>=7000) :
-        
-       console.log( "O Herói de nome  "+nome+" está no nível de Radiante");
-        break;
+// Solicita o nome do herói ao usuário
+let nome = prompt("Digite seu nome:");
 
+// Solicita a quantidade de XP e converte para número
+let exp1 = prompt("Digite sua XP:");
+let exp = parseInt(exp1);
+
+// Variável que irá armazenar o nível do herói
+let nivel = "";
+
+// Estrutura de decisão para determinar o nível com base na XP
+if (exp < 1000) {
+  nivel = "Ferro";
+} else if (exp <= 2000) {
+  nivel = "Bronze";
+} else if (exp <= 5000) {
+  nivel = "Prata";
+} else if (exp <= 7000) {
+  nivel = "Ouro";
+} else if (exp <= 8000) {
+  nivel = "Platina";
+} else if (exp <= 9000) {
+  nivel = "Ascendente";
+} else if (exp <= 10000) {
+  nivel = "Imortal";
+} else {
+  nivel = "Radiante";
 }
+
+// Exibe a mensagem final com o nome e o nível do herói
+console.log(`O Herói de nome ${nome} está no nível de ${nivel}`);
